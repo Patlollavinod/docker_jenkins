@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        docker {
+            image 'python:3.9' // Use the official Python 3.9 image as the build environment
+        }
+    }
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t my-python-app .' // Build the Docker image with the tag "my-python-app"
+            }
+        }
+        stage('Run Docker Container') {
+            steps {
+                sh 'docker run -it --rm my-python-app python /path/to/your/python/script.py' // Run the Docker container and execute your Python script
+            }
+        }
+    }
+}
