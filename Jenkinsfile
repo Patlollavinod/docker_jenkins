@@ -8,7 +8,7 @@ pipeline {
         }
         stage('docker image  build') {
             steps {
-                sh 'docker build . : test'
+                sh 'docker build -t test:latest .'
             }
         }
         stage(' Runing program '){
