@@ -13,7 +13,7 @@ pipeline {
         }
         stage(' runing program'){
             steps{
-                sh ' python main.py L1.txt L2.txt R.txt
+                sh ' python main.py L1.txt L2.txt R.txt '
             }
         }
     }
