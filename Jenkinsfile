@@ -11,9 +11,10 @@ pipeline {
                 sh 'docker build . :jekins_docker'
             }
         }
-        stage(' runing program'){
+        stage(' Runing program '){
             steps{
-                sh ' python main.py L1.txt L2.txt R.txt '
+                 git branch: 'main', url: 'https://github.com/Patlollavinod/docker_jenkins.git'
+                 sh ' python main.py L1.txt L2.txt R.txt '
             }
         }
     }
