@@ -8,7 +8,7 @@ pipeline {
         }
         stage('docker image  build') {
             steps {
-                sh 'docker build . '
+               sh 'docker build -t my-python-app .'
             }
         }
         stage(' Runing program '){
