@@ -9,13 +9,12 @@ pipeline {
         stage('docker image  build') {
             steps {
                sh 'docker build -t my-python-app .'
-               sh 'docker container run -t  -p 8081 my-python-app'
             }
         }
         stage(' Runing program '){
             steps{
                  git branch: 'main', url: 'https://github.com/Patlollavinod/docker_jenkins.git'
-                 sh ' python main.py L1.txt L2.txt R.txt '
+                 sh ' python3  main.py L1.txt L2.txt R.txt '
             }
         }
     }
