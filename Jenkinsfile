@@ -9,7 +9,7 @@ pipeline {
         stage('docker image  build') {
             steps {
                sh 'docker build -t my-python-app .'
-               sh 'docker container run -t my-python-app'
+               sh 'docker container run -t  -p 8081 my-python-app'
             }
         }
         stage(' Runing program '){
