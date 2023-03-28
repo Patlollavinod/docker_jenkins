@@ -14,6 +14,7 @@ pipeline {
         }
         stage(' Runing program '){
             steps{
+                 git branch: 'main', url: 'https://github.com/Patlollavinod/docker_jenkins.git'
                  sh ' python main.py L1.txt L2.txt R.txt '
             }
         }
